@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     let seconds = 4.0
     var val = 0
-    let frequency = [1, 2, 3, 4, 5, 6]
+    var frequency = [1, 2, 3, 4, 5, 6]
 
         override func viewDidLoad() {
             // do any additional setup after loading the view.
@@ -23,6 +23,7 @@ class ViewController: UIViewController {
                     AudioServicesPlaySystemSound(SystemSoundID(4095))
                     Thread.sleep(forTimeInterval: 1)
                 }
+                frequency.remove(at: randomName - 1)
                 Thread.sleep(forTimeInterval: 5)
                 val += 1
             }
