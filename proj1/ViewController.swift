@@ -9,7 +9,14 @@ import UIKit
 import AudioToolbox
 class ViewController: UIViewController {
     
-    private let button: UIButton = {
+    private let button1: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .black
+        button.setTitle("Start Set 1", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        return button
+    }()
+    private let button2: UIButton = {
         let button = UIButton()
         button.backgroundColor = .black
         button.setTitle("Start Set 1", for: .normal)
@@ -21,20 +28,29 @@ class ViewController: UIViewController {
         // do any additional setup after loading the view.
         super.viewDidLoad()
         view.backgroundColor = .systemBlue
-        view.addSubview(button)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
-//        set1(numTrials: 6)
+        view.addSubview(button1)
+        view.addSubview(button2)
+        button1.addTarget(self, action: #selector(didTapButton1), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(didTapButton2), for: .touchUpInside)
     }
     
-    @objc func didTapButton() {
+    @objc func didTapButton1() {
+        set1(numTrials: 6)
+    }
+    @objc func didTapButton2() {
         set1(numTrials: 6)
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        button.frame = CGRect(x: 30,
+        button1.frame = CGRect(x: 30,
                               y: view.frame.size.height - 150 - view.safeAreaInsets.bottom,
-                              width: view.frame.size.width - 60,
+                              width: view.frame.size.width - 260,
+                              height: 55
+        )
+        button2.frame = CGRect(x: 30,
+                              y: view.frame.size.height - 150 - view.safeAreaInsets.bottom,
+                              width: view.frame.size.width - 260,
                               height: 55
         )
     }
