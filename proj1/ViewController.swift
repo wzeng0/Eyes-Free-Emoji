@@ -18,6 +18,15 @@ class ViewController: UIViewController {
         return button
     }()
 
+//    Button for trial 2
+    private let button2: UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .black
+        button.setTitle("Start Set 2", for: .normal)
+        button.setTitleColor(.blue, for: .normal)
+        return button
+        }()
+    
 //    Loading View
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,16 +37,28 @@ class ViewController: UIViewController {
 //        Adding button for experimental design 1
         view.addSubview(button1)
         button1.addTarget(self, action: #selector(didTapButton1), for: .touchUpInside)
+        
+//        Adding button for experimental design 2
+        view.addSubview(button2)
+        button2.addTarget(self, action: #selector(didTapButton2), for: .touchUpInside)
     }
     
 //    What to do when button 1 is tapped
     @objc func didTapButton1() {
 //        Tried changing background color
         view.backgroundColor = colors.randomElement()
-        
 //          Running the Trail Function
 //        set1(numTrials: 6)
     }
+    
+//    What to do when button 2 is tapped
+    @objc func didTapButton2() {
+//        Tried changing background color
+        view.backgroundColor = colors.randomElement()
+//          Running the Trail Function
+//        set1(numTrials: 6)
+    }
+    
     
 //    Sub Layout view, the view screen is smaller than the main view layout screen
     override func viewDidLayoutSubviews() {
@@ -49,6 +70,13 @@ class ViewController: UIViewController {
                               width: view.frame.size.width - 260,
                               height: 55
         )
+
+//        Dimensions of button 2
+        button1.frame = CGRect(x: 200,
+                                y: view.frame.size.height - 150 - view.safeAreaInsets.bottom,
+                                width: view.frame.size.width - 260,
+                                height: 55
+                )
     }
     
 //    Screen Colors for every emotions
