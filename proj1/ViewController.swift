@@ -68,27 +68,27 @@ class ViewController: UIViewController {
     }
     
     @objc func oneTap(gesture: UITapGestureRecognizer) {
-        userOutput.append("happy")
+        userOutput.append("thumbs up")
         print(userOutput)
     }
     @objc func twoTap(gesture: UITapGestureRecognizer) {
         userOutput = userOutput.dropLast(1)
-        userOutput.append("sad")
+        userOutput.append("love")
         print(userOutput)
     }
     @objc func threeTap(gesture: UITapGestureRecognizer) {
         userOutput = userOutput.dropLast(1)
-        userOutput.append("thumbs up")
+        userOutput.append("laugh")
         print(userOutput)
     }
     @objc func fourTap(gesture: UITapGestureRecognizer) {
         userOutput = userOutput.dropLast(1)
-        userOutput.append("thumbs down")
+        userOutput.append("happy")
         print(userOutput)
     }
     @objc func fiveTap(gesture: UITapGestureRecognizer) {
         userOutput = userOutput.dropLast(1)
-        userOutput.append("laugh")
+        userOutput.append("sad")
         print(userOutput)
     }
     @objc func sixTap(gesture: UITapGestureRecognizer) {
