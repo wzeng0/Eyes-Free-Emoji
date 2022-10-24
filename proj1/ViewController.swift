@@ -74,27 +74,22 @@ class ViewController: UIViewController {
     @objc func twoTap(gesture: UITapGestureRecognizer) {
         userOutput = userOutput.dropLast(1)
         userOutput.append("love")
-        print(userOutput)
     }
     @objc func threeTap(gesture: UITapGestureRecognizer) {
         userOutput = userOutput.dropLast(1)
         userOutput.append("laugh")
-        print(userOutput)
     }
     @objc func fourTap(gesture: UITapGestureRecognizer) {
         userOutput = userOutput.dropLast(1)
         userOutput.append("happy")
-        print(userOutput)
     }
     @objc func fiveTap(gesture: UITapGestureRecognizer) {
         userOutput = userOutput.dropLast(1)
         userOutput.append("sad")
-        print(userOutput)
     }
     @objc func sixTap(gesture: UITapGestureRecognizer) {
         userOutput = userOutput.dropLast(1)
         userOutput.append("mad")
-        print(userOutput)
     }
     
     //    Button for trial 1
@@ -116,7 +111,7 @@ class ViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         //        Dimensions of button 1
-        button1.frame = CGRect(x: 30,
+        button1.frame = CGRect(x:view.frame.size.width / 3,
                                y: view.frame.size.height - 150 - view.safeAreaInsets.bottom,
                                width: view.frame.size.width - 260,
                                height: 55
@@ -143,5 +138,7 @@ class ViewController: UIViewController {
             Thread.sleep(forTimeInterval: seconds)
             val += 1
         }
+        print(userOutput)
+        userOutput = []
     }
 }
