@@ -17,15 +17,6 @@ class ViewController: UIViewController {
         button.setTitleColor(.blue, for: .normal)
         return button
     }()
-    
-//    Button for trial 2
-    private let button2: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .black
-        button.setTitle("Start Set 2", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
-        return button
-    }()
 
 //    Loading View
     override func viewDidLoad() {
