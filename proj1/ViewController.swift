@@ -48,7 +48,7 @@ class ViewController: UIViewController {
 //        Tried changing background color
         view.backgroundColor = colors.randomElement()
 //          Running the Trail Function
-//        set1(numTrials: 6)
+        set1(numTrials: 6)
     }
     
 //    What to do when button 2 is tapped
@@ -72,7 +72,7 @@ class ViewController: UIViewController {
         )
 
 //        Dimensions of button 2
-        button1.frame = CGRect(x: 200,
+        button2.frame = CGRect(x: 200,
                                 y: view.frame.size.height - 150 - view.safeAreaInsets.bottom,
                                 width: view.frame.size.width - 260,
                                 height: 55
