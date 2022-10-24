@@ -56,7 +56,7 @@ class ViewController: UIViewController {
 //        Tried changing background color
         view.backgroundColor = colors.randomElement()
 //          Running the Trail Function
-//        set1(numTrials: 6)
+        set2(numTrials: 6)
     }
     
     
@@ -110,4 +110,27 @@ class ViewController: UIViewController {
             val += 1
         }
     }
+    
+//    Trial 2 with different vibrations each representing a different Emotion
+        func set2(numTrials: Int) -> Void {
+            let seconds = 4.0
+            var val = 0
+            var frequency = [4095, 1304, 1321, 1519, 1350, 1521]
+            
+            // 4095 = normal, 1521 = 3 little booms, 1321 = two
+            // need to change 1350, also 1519 is very close to 1521
+
+            while (val < numTrials) {
+                let randomName = frequency.randomElement()!
+                AudioServicesPlaySystemSound(SystemSoundID(randomName))
+                
+                if let index = frequency.firstIndex(of: randomName) {
+                    frequency.remove(at: index)
+//                view.backgroundColor = colors[index]
+                    print("Index of '\(randomName)' is \(index).")
+                }
+                Thread.sleep(forTimeInterval: seconds)
+                val += 1
+            }
+        }
 }
